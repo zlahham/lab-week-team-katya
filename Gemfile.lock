@@ -142,6 +142,3 @@ DEPENDENCIES
   sinatra
   sinatra-flash
   sinatra-partial
-
-BUNDLED WITH
-   1.10.6

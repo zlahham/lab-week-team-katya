@@ -9,6 +9,7 @@ require 'capybara/rspec'
 require 'rspec'
 require 'factory_girl'
 require_relative 'helpers/session_helpers'
+require 'database_cleaner'
 
 Capybara.app = VirtualAssistant::App
 RSpec.configure do |config|
@@ -28,4 +29,18 @@ RSpec.configure do |config|
 
   FactoryGirl.definition_file_paths = %w{./spec/factories}
   FactoryGirl.find_definitions
+
+  config.before(:suite) do
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.clean_with(:truncation)
+  end
+
+  config.before(:each) do
+    DatabaseCleaner.start
+  end
+
+  config.after(:each) do
+    DatabaseCleaner.clean
+  end
+
 end
