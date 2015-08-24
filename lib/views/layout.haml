@@ -2,14 +2,21 @@
   %head
     %title Virtual Assistant
   %body
-    #header
-    %ul#menu
-      %li
-        %a{:href => "/users/new"} Sign up
 
     - if current_user
       Welcome, #{current_user.name}
-      %form{:method => "post", :action => "/sessions"}
-        %input{:name => "_method", :type => "hidden", :value => "delete"}
-          %input{:type => "submit", :value => "Sign out"}
+
+    %form{:method => "post", :action => "sessions"}
+      %input{:type => "hidden", :name => "_method", :value => "delete"}
+        %input.button{:type => "submit", :value => "Sign Out"}
+
+    - if flash[:errors] && !flash[:errors].empty?
+      Please refer to the errors below
+      %ul
+        - flash[:errors].each do |error|
+          %li #{error}
+
+      - if flash[:notice]
+        %p #{flash[:notice]}
+
     =yield
