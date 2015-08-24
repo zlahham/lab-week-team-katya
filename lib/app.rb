@@ -2,6 +2,7 @@ require 'sinatra/base'
 require_relative 'data_mapper_setup'
 require_relative 'controllers/base.rb'
 require_relative 'controllers/user.rb'
+require './lib/helpers/app_helpers'
 
 
 module VirtualAssistant

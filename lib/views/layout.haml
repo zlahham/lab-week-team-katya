@@ -1,0 +1,25 @@
+%html
+  %head
+    %title Virtual Assistant
+    / %link{:href => "css/style.css", :rel => "stylesheet", :type => "text/css"}
+  %body
+    #header
+    %ul#menu
+      %li
+        %a{:href => "/users/new"} Sign up
+      / %li
+      /   %a{:href => "/sessions/new"} Sign in
+      / %li
+      /   %a{:href => "/peeps/new"} Peep!
+      / %li
+      /   %a{:href => "/peeps"} Chitter feed
+      - if current_user
+        Welcome, #{current_user.name}
+        %form{:action => "/sessions", :method => "post"}
+          %input{:name => "_method", :type => "hidden", :value => "delete"}
+            %input{:type => "submit", :value => "Sign out"}
+    / = partial :welcome_message
+    / = partial :flash
+    = yield
+
+
