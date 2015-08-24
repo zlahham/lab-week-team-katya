@@ -9,7 +9,7 @@ module VirtualAssistant
 
   class App < Sinatra::Base
     get '/' do
-      'Hello Raph!'
+      "Welcome"
     end
 
     use Routes::UserController
