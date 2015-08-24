@@ -1,8 +1,9 @@
 require 'sinatra/base'
-require_relative 'controllers/base'
-
+require_relative 'data_mapper_setup'
+require_relative 'controllers/base.rb'
 
 module VirtualAssistant
+
   class App < Sinatra::Base
     get '/' do
       'Hello App!'

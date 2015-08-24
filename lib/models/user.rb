@@ -1,19 +1,16 @@
 class User
+  
+  attr_reader :password
+  attr_accessor :password_confirmation
 
-include DataMapper::Resource
+  include DataMapper::Resource
 
-attr_reader :passowrd
-attr_accessor :passowrd_confirmation
+  validates_presence_of :email
+  validates_confirmation_of :password
+  validates_uniqueness_of :email
 
-include DataMapper::Resource
-
-validates_presence_of :email
-validates_confirmation _of :passowrd
-validates_uniqueness_of :email
-
-property :id, Serial
-property :email, String, required: true
-property :passowrd_digest, Text
-property :passowrd_toeken, Text
-
+  property :id, Serial
+  property :email, String, required: true
+  property :password_digest, Text
+  property :password_token, Text
 end
