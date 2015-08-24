@@ -13,4 +13,10 @@ class User
   property :email, String, required: true
   property :password_digest, Text
   property :password_token, Text
+  property :name, Text
+
+
+  def password=(password)
+    @password = password
+  end
 end

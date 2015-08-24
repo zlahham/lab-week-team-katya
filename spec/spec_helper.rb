@@ -8,9 +8,13 @@ require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
 require 'factory_girl'
+require_relative 'helpers/session_helpers'
 
 Capybara.app = VirtualAssistant::App
 RSpec.configure do |config|
+
+  config.include SessionHelpers
+
   config.include Capybara::DSL
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true

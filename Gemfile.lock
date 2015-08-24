@@ -71,6 +71,8 @@ GEM
     factory_girl (4.5.0)
       activesupport (>= 3.0.0)
     fastercsv (1.5.5)
+    haml (4.0.7)
+      tilt
     highline (1.7.3)
     i18n (0.7.0)
     json (1.8.3)
@@ -133,9 +135,13 @@ DEPENDENCIES
   dm-postgres-adapter
   dm-validations
   factory_girl
+  haml
   rack
   rspec
   rspec-sinatra
   sinatra
   sinatra-flash
   sinatra-partial
+
+BUNDLED WITH
+   1.10.6
