@@ -1,6 +1,9 @@
+require 'byebug'
+
 feature 'Signing up' do
 
   scenario 'I can sign up as a new user' do
+    # byebug
     user = build :user
     expect{ sign_up(user) }.to change(User, :count).by(1)
     expect(page).to have_content('Welcome, Raph')
@@ -41,4 +44,19 @@ feature 'Sign in' do
     expect(page).to have_content "Welcome, Raph"
   end
 
+  scenario 'error with incorrect password' do
+    user = build(:user, password: 'wrong')
+    sign_in(user)
+    expect(page).to have_content("The email or password is incorrect")
+  end
+
+end
+
+feature 'Sign out' do
+  scenario 'when signed in, user can sign out' do
+    user = create :user
+    sign_in(user)
+    click_button 'Sign out'
+    expect(page).to have_content('Goodbye!')
+  end
 end

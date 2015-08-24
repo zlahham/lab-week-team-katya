@@ -13,10 +13,16 @@ module VirtualAssistant
           if @user
             session[:user_id] = @user.id
             redirect to('/')
-            else
-            flash.now[:error] = ['The username or password is incorrect']
-              erb :'sessions/new'
-            end
+          else
+            flash.now[:errors] = ['The email or password is incorrect']
+            haml :'sessions/new'
+          end
+      end
+
+      delete '/sessions' do
+        session.clear
+        flash[:notice] = 'You are now logged out'
+        redirect '/'
       end
 
     end

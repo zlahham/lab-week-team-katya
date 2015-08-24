@@ -1,4 +1,5 @@
 require 'bcrypt'
+require 'byebug'
 
 class User
 

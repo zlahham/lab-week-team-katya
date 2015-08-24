@@ -10,8 +10,10 @@ require './lib/helpers/app_helpers'
 module VirtualAssistant
 
   class App < Sinatra::Base
+    use Rack::MethodOverride
 
     include AppHelpers
+
     register Sinatra::Flash
 
 
