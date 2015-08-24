@@ -33,3 +33,12 @@ feature 'Signing up' do
   end
 
 end
+
+feature 'Sign in' do
+  scenario 'with correct details' do
+    user = create(:user)
+    sign_in(user)
+    expect(page).to have_content "Welcome, Raph"
+  end
+
+end

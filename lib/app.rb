@@ -3,6 +3,7 @@ require 'sinatra/flash'
 require_relative 'data_mapper_setup'
 require_relative 'controllers/base'
 require_relative 'controllers/user'
+require_relative 'controllers/session'
 require './lib/helpers/app_helpers'
 
 
@@ -19,8 +20,9 @@ module VirtualAssistant
     end
 
     use Routes::UserController
+    use Routes::SessionController
 
-    
+
     run! if app_file == $0
   end
 end
