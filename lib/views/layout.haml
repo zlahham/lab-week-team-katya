@@ -8,6 +8,8 @@
       %form{:method => "post", :action => "sessions"}
         %input{:type => "hidden", :name => "_method", :value => "delete"}
         %input.button{:type => "submit", :value => "Sign out"}
+      %form{:action => "/tasks/new"}
+        %input.button{:type => "submit", :value => "New task"}
 
     - if flash[:errors] && !flash[:errors].empty?
       Please refer to the errors below

@@ -1,15 +1,16 @@
 feature 'Creating tasks' do
 
   scenario 'I can create a new tasks if I am signed in' do
-    visit('/')
-    click_button 'New Task'
-    expect(path).to be('/tasks/new')
+    user = create :user
+    sign_in(user)
+    click_button 'New task'
+    expect(current_path).to eq('/tasks/new')
     fill_in 'task', with: 'Wash my hair'
     fill_in 'location', with: 'Home'
-    fill_in 'due date', with: '26/08/2015'
-    fill_in 'tag', with: 'Personal Care'
+    fill_in 'deadline', with: '26/08/2015'
+    fill_in 'tags', with: 'Personal Care'
     click_button 'Create Task'
-    expect(path).to be('/')
+    expect(current_path).to eq('/')
     expect(page).to have_content('Wash my hair')
   end
 
