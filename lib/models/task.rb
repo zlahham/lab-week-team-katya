@@ -5,7 +5,7 @@ class Task
   property :id, Serial
   property :task, String
   property :location, String
-  property :deadline, DateTime
+  property :deadline, Date
   belongs_to :user
   has n, :tags, through: Resource
 

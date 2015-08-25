@@ -24,11 +24,12 @@ module VirtualAssistant
 
     post '/' do
       if session[:user_id]
-        # user_id = session[:user_id]
+        user_id = session[:user_id]
         @task = Task.new(
             task: params[:task],
             location: params[:location],
-            deadline: params[:deadline])
+            deadline: params[:deadline],
+            user_id: user_id)
         params[:tags].split(' ').each do |t|
           tag = Tag.create(name: t)
           @task.tags << tag
