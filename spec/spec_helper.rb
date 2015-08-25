@@ -9,12 +9,14 @@ require 'capybara/rspec'
 require 'rspec'
 require 'factory_girl'
 require_relative 'helpers/session_helpers'
+require_relative 'helpers/task_helpers'
 require 'database_cleaner'
 
 Capybara.app = VirtualAssistant::App
 RSpec.configure do |config|
 
   config.include SessionHelpers
+  config.include TaskHelpers
 
   config.include Capybara::DSL
   config.expect_with :rspec do |expectations|

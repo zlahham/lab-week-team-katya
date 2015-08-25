@@ -35,6 +35,9 @@ feature 'Signing up' do
     expect(page).to have_content('Email is already taken')
   end
 
+  xscenario 'I cannot sign up if someone I am already signed in' do
+  end
+
 end
 
 feature 'Sign in' do
