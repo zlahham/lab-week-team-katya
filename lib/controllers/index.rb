@@ -24,14 +24,17 @@ module VirtualAssistant
             @task.tags << tag
           end
          @task.save
+
          redirect to('/')
-            # else
-            #   # flash.now[:errors] = @task.errors.full_messages
-            #   haml :'tasks/new'
-            # end
-          # end
         end
       end
+
+      get '/tags/:tag_name' do
+        tag = Tag.all(tag_name: params[:tag_name])
+        @tasks = tag ? tag.tasks : []
+        haml :index
+      end
+
     end
   end
 end
