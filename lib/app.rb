@@ -19,6 +19,9 @@ module VirtualAssistant
 
 
     get '/' do
+      if session[:user_id]
+        @tasks = Task.all
+      end
       haml :index
     end
 
@@ -31,7 +34,7 @@ module VirtualAssistant
             deadline: params[:deadline],
             user_id: user_id)
         params[:tags].split(' ').each do |t|
-          tag = Tag.create(name: t)
+          tag = Tag.create(tag_name: t)
           @task.tags << tag
         end
        @task.save
