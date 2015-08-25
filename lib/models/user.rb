@@ -12,6 +12,8 @@ class User
   validates_confirmation_of :password
   validates_uniqueness_of :email
 
+  has n, :tasks
+
   property :id, Serial
   property :email, String, required: true
   property :password_digest, Text

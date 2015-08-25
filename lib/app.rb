@@ -23,7 +23,24 @@ module VirtualAssistant
     end
 
     post '/' do
-      
+      if session[:user_id]
+        # user_id = session[:user_id]
+        @task = Task.new(
+            task: params[:task],
+            location: params[:location],
+            deadline: params[:deadline])
+        params[:tags].split(' ').each do |t|
+          tag = Tag.create(name: t)
+          @task.tags << tag
+        end
+       @task.save
+       redirect to('/')
+          # else
+          #   # flash.now[:errors] = @task.errors.full_messages
+          #   haml :'tasks/new'
+          # end
+        # end
+      end
     end
 
     use Routes::UserController

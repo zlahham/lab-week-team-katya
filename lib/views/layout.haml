@@ -5,7 +5,7 @@
 
     - if current_user
       Welcome, #{current_user.name}
-      %form{:method => "post", :action => "sessions"}
+      %form{:method => "post", :action => "/sessions"}
         %input{:type => "hidden", :name => "_method", :value => "delete"}
         %input.button{:type => "submit", :value => "Sign out"}
       %form{:action => "/tasks/new"}
