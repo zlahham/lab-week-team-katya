@@ -1,13 +1,29 @@
-%h1 Create your task
+%h3 Create your task
+
+/ %form{:action => "/", :method => "post"}
+/   %p Task:
+/   %input{:name => "task", :type => "text"}
+/     %p Location:
+/     %input{:name => "location", :type => "text"}
+/       %p Deadline:
+/       %input{:name => "deadline", :type => "date"}
+/         %p Tags:
+/         %input{:name => "tags", :type => "text"}
+/           %br
+/             %input{:type => "submit", :value => "Create Task"}
+
 
 %form{:action => "/", :method => "post"}
-  %p Task:
-  %input{:name => "task", :type => "text"}
-    %p Location:
-    %input{:name => "location", :type => "text"}
-      %p Deadline:
-      %input{:name => "deadline", :type => "date"}
-        %p Tags:
-        %input{:name => "tags", :type => "text"}
-          %br
-            %input{:type => "submit", :value => "Create Task"}
+  .form-group
+    %label{:for => "exampleInputTask"} Task
+    %input#exampleInputTask.form-control{:name => "task", :placeholder => "Task", :type => "text"}
+  .form-group
+    %label{:for => "exampleInputLocation"} Location
+    %input#exampleInputLocation.form-control{:name => "location", :placeholder => "Location", :type => "text"}
+  .form-group
+    %label{:for => "exampleInputDeadline"} Deadline
+    %input#exampleInputDeadline.form-control{:name => "deadline", :placeholder => "Deadline", :type => "date"}
+  .form-group
+    %label{:for => "tags"} Tags
+    %input#exampleInputEmail1.form-control{:name => "tags", :placeholder => "Name", :type => "text"}
+  %button.btn.btn-default{:type => "submit"} Create Task

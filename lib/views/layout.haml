@@ -9,19 +9,19 @@
   %body
 
     - if current_user
-      Welcome, #{current_user.name}
+      %h3 Welcome, #{current_user.name}
       %form{:method => "post", :action => "/sessions"}
         %input{:type => "hidden", :name => "_method", :value => "delete"}
-        %input.button{:type => "submit", :value => "Sign out"}
+        %input.btn.btn-default{:type => "submit", :value => "Sign out"}
+        / %a.btn.btn-primary.btn-lg.active{:type =>'submit', :role => "button"} Sign out
+
       %form{:action => "/tasks/new"}
-        %input.button{:type => "submit", :value => "New task"}
+        %input.btn.btn-default{:type => "submit", :value => "New task"}
     -else
-      Welcome to Virtual Assistant
+      %h3 Welcome to Virtual Assistant
       %ul#menu
-        %li
-          %a{:href => "/users/new"} Sign up
-        %li
-          %a{:href => "/sessions/new"} Sign in
+        %a.btn.btn-primary.btn-lg.active{:href => "/users/new", :role => "button"} Sign up
+        %a.btn.btn-primary.btn-lg.active{:href => "/sessions/new", :role => "button"} Sign in
 
 
     - if flash[:errors] && !flash[:errors].empty?

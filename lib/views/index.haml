@@ -4,10 +4,9 @@
   %body
 
     - if current_user
-      %h3 Here are your tasks:
-      #peeps
+      %h4 Here are your tasks:
       %ul
-        - @tasks.each do |tee|
+        - @tasks.all(order: [:deadline.asc]).each do |tee|
           %li
             %p
               Task:

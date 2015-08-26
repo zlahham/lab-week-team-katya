@@ -1,13 +1,16 @@
-%h1 Please sign up
+%h3 Please sign up
 
 %form{:action => "/users", :method => "post"}
-  %p Email:
-  %input{:name => "email", :type => "text"}
-    %p Password:
-    %input{:name => "password", :type => "password"}
-      %p Password Confirmation:
-      %input{:name => "password_confirmation", :type => "password"}
-        %p Name:
-        %input{:name => "name", :type => "text"}
-          %br
-            %input{:type => "submit", :value => "Sign up"}
+  .form-group
+    %label{:for => "exampleInputEmail1"} Email address
+    %input#exampleInputEmail1.form-control{:name => "email", :placeholder => "Email", :type => "email"}
+  .form-group
+    %label{:for => "exampleInputPassword1"} Password
+    %input#exampleInputPassword1.form-control{:name => "password", :placeholder => "Password", :type => "password"}
+  .form-group
+    %label{:for => "exampleInputPassword1"} Password Confirmation
+    %input#exampleInputPassword_confirmation.form-control{:name => "password_confirmation", :placeholder => "Password Confirmation", :type => "password"}
+  .form-group
+    %label{:for => "exampleInputName"} Name
+    %input#exampleInputEmail1.form-control{:name => "name", :placeholder => "Name", :type => "text"}
+  %button.btn.btn-default{:type => "submit"} Sign up
