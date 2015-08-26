@@ -3,8 +3,8 @@
     %title Virtual Assistant
 
     %link{:href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css", :rel => "stylesheet"}
-
-    %link{:href => "/css/style.css", :rel => "stylesheet", :type => "text/css"}
+    %link{:href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css", :rel => "stylesheet"}
+    %script{:src => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"}
 
   %body
 
@@ -16,6 +16,7 @@
       %form{:action => "/tasks/new"}
         %input.button{:type => "submit", :value => "New task"}
     -else
+      Welcome to Virtual Assistant
       %ul#menu
         %li
           %a{:href => "/users/new"} Sign up
