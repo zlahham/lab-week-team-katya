@@ -17,7 +17,8 @@ Welcome to
           = tee.location
         %p
           Tags:
-          %a{:href => "/tags/#{tee.tags.map(&:tag_name).join(', ')}"}= tee.tags.map(&:tag_name).join(', ')
+          - tee.tags.map(&:tag_name).each do |x|
+            %a{:href => "/tags/#{x}"}= x
 - else
   %ul#menu
   %li
