@@ -14,10 +14,12 @@
           %h3 Welcome, #{current_user.name}
           %form{:method => "post", :action => "/sessions"}
             %input{:type => "hidden", :name => "_method", :value => "delete"}
-            %input.btn.btn-default{:type => "submit", :value => "Sign out"}
+            %input.btn.btn-warning{:type => "submit", :value => "Sign out"}
 
           %form{:action => "/tasks/new"}
-            %input.btn.btn-default{:type => "submit", :value => "New task"}
+            %input.btn.btn-success{:type => "submit", :value => "New task"}
+          %br
+          %br
         -else
           %h3 Welcome to Virtual Assistant
           %ul#menu
