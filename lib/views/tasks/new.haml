@@ -1,13 +1,14 @@
 %h1 Create your task
 
 %form{:action => "/", :method => "post"}
-  %p Task:
-  %input{:name => "task", :type => "text"}
-    %p Location:
-    %input{:name => "location", :type => "text"}
-      %p Deadline:
-      %input{:name => "deadline", :type => "date"}
-        %p Tags:
-        %input{:name => "tags", :type => "text"}
+  %p
+  %input{:name => "task", :type => "text", :placeholder => "Task"}
+    %p
+    %input{:name => "location", :type => "text", :placeholder => "Location"}
+      %p
+      %input{:name => "deadline", :type => "date",:placeholder => "Deadline"}
+        %p
+        %input{:name => "tags", :type => "text", :placeholder => "#Tags"}
+          %br
           %br
             %input{:type => "submit", :value => "Create Task"}
