@@ -7,12 +7,6 @@ module VirtualAssistant
       get '/tasks/new' do
         haml :'tasks/new'
       end
-
-      # delete '/sessions' do
-      #   session.clear
-      #   flash[:notice] = 'You are now logged out'
-      # end
-
     end
   end
 end

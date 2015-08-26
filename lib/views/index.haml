@@ -5,12 +5,13 @@
 
     - if current_user
       %h4 Here are your tasks:
-      %ul
-        - @tasks.all(order: [:deadline.asc]).each do |tee|
-          %li
-            %p
-              Task:
-              = tee.task
+
+
+      - @tasks.all(order: [:deadline.asc]).each do |tee|
+        .panel.panel-default
+          .panel-heading
+            #{tee.task}
+          .panel-body
             %p
               Deadline:
               = tee.deadline.strftime("%d/%m/%Y")
@@ -21,3 +22,20 @@
               Tags:
               - tee.tags.map(&:tag_name).each do |x|
                 %a{:href => "/tags/#{x}"}= x
+
+      -# %ul
+      -#   - @tasks.all(order: [:deadline.asc]).each do |tee|
+      -#     %li
+      -#       %p
+      -#         Task:
+      -#         = tee.task
+      -#       %p
+      -#         Deadline:
+      -#         = tee.deadline.strftime("%d/%m/%Y")
+      -#       %p
+      -#         Location:
+      -#         = tee.location
+      -#       %p
+      -#         Tags:
+      -#         - tee.tags.map(&:tag_name).each do |x|
+      -#           %a{:href => "/tags/#{x}"}= x
