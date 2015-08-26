@@ -1,35 +1,37 @@
 %html
   %head
     %title Virtual Assistant
-
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
     %link{:href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css", :rel => "stylesheet"}
     %link{:href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css", :rel => "stylesheet"}
+    %link{:href => "/public/css/custom.css", :rel => "stylesheet", :type => "text/css"}
     %script{:src => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"}
 
   %body
+    .container
+      %center
+        - if current_user
+          %h3 Welcome, #{current_user.name}
+          %form{:method => "post", :action => "/sessions"}
+            %input{:type => "hidden", :name => "_method", :value => "delete"}
+            %input.btn.btn-default{:type => "submit", :value => "Sign out"}
 
-    - if current_user
-      %h3 Welcome, #{current_user.name}
-      %form{:method => "post", :action => "/sessions"}
-        %input{:type => "hidden", :name => "_method", :value => "delete"}
-        %input.btn.btn-default{:type => "submit", :value => "Sign out"}
-
-      %form{:action => "/tasks/new"}
-        %input.btn.btn-default{:type => "submit", :value => "New task"}
-    -else
-      %h3 Welcome to Virtual Assistant
-      %ul#menu
-        %a.btn.btn-primary.btn-lg.active{:href => "/users/new", :role => "button"} Sign up
-        %a.btn.btn-primary.btn-lg.active{:href => "/sessions/new", :role => "button"} Sign in
+          %form{:action => "/tasks/new"}
+            %input.btn.btn-default{:type => "submit", :value => "New task"}
+        -else
+          %h3 Welcome to Virtual Assistant
+          %ul#menu
+            %a.btn.btn-primary.btn-lg.active{:href => "/users/new", :role => "button"} Sign up
+            %a.btn.btn-primary.btn-lg.active{:href => "/sessions/new", :role => "button"} Sign in
 
 
-    - if flash[:errors] && !flash[:errors].empty?
-      Please refer to the errors below
-      %ul
-        - flash[:errors].each do |error|
-          %li #{error}
+        - if flash[:errors] && !flash[:errors].empty?
+          Please refer to the errors below
+          %ul
+            - flash[:errors].each do |error|
+              %li #{error}
 
-      - if flash[:notice]
-        %p #{flash[:notice]}
+          - if flash[:notice]
+            %p #{flash[:notice]}
 
-    =yield
+        =yield

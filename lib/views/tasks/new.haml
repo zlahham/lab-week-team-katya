@@ -1,16 +1,21 @@
 %h3 Create your task
+.row
+  .col-xs-6.col-md-3
+    %form{:action => "/", :method => "post"}
+      .form-group{:width => "80%"}
+        %label{:for => "exampleInputTask"} Task
+        %input#exampleInputTask.form-control{:name => "task", :placeholder => "Task", :type => "text"}
+      .form-group
+        %label{:for => "exampleInputLocation"} Location
+        %input#exampleInputLocation.form-control{:name => "location", :placeholder => "Location", :type => "text"}
+      .form-group
+        %label{:for => "exampleInputDeadline"} Deadline
+        %input#exampleInputDeadline.form-control{:name => "deadline", :placeholder => "Deadline", :type => "date"}
+      .form-group
+        %label{:for => "tags"} Tags
+        %input#Tags.form-control{:name => "tags", :placeholder => "Tags", :type => "text"}
+      %button.btn.btn-default{:type => "submit"} Create Task
 
-%form{:action => "/", :method => "post"}
-  .form-group
-    %label{:for => "exampleInputTask"} Task
-    %input#exampleInputTask.form-control{:name => "task", :placeholder => "Task", :type => "text"}
-  .form-group
-    %label{:for => "exampleInputLocation"} Location
-    %input#exampleInputLocation.form-control{:name => "location", :placeholder => "Location", :type => "text"}
-  .form-group
-    %label{:for => "exampleInputDeadline"} Deadline
-    %input#exampleInputDeadline.form-control{:name => "deadline", :placeholder => "Deadline", :type => "date"}
-  .form-group
-    %label{:for => "tags"} Tags
-    %input#Tags.form-control{:name => "tags", :placeholder => "Tags", :type => "text"}
-  %button.btn.btn-default{:type => "submit"} Create Task
+
+
+

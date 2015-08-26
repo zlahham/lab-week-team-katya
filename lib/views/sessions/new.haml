@@ -1,10 +1,11 @@
 %h3 Please sign in
-
-%form{:action => "/sessions", :method => "post"}
-  .form-group
-    %label{:for => "exampleInputEmail"} Email:
-    %input#exampleInputEmail.form-control{:name => "email", :placeholder => "Email", :type => "email"}
-  .form-group
-    %label{:for => "exampleInputPassword"} Password
-    %input#exampleInputPassword.form-control{:name => "password", :placeholder => "Password", :type => "password"}
-  %button.btn.btn-default{:type => "submit"} Sign in
+.row
+  .col-xs-6.col-md-3
+    %form{:action => "/sessions", :method => "post"}
+      .form-group
+        %label{:for => "exampleInputEmail"} Email:
+        %input#exampleInputEmail.form-control{:name => "email", :placeholder => "Email", :type => "email"}
+      .form-group
+        %label{:for => "exampleInputPassword"} Password
+        %input#exampleInputPassword.form-control{:name => "password", :placeholder => "Password", :type => "password"}
+      %button.btn.btn-default{:type => "submit"} Sign in
