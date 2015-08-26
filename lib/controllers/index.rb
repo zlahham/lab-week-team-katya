@@ -6,7 +6,7 @@ module VirtualAssistant
 
       get '/' do
         if session[:user_id]
-          @tasks = Task.all
+          @tasks = Task.all(:user_id => session[:user_id])
         end
         haml :index
       end
