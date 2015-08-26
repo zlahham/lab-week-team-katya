@@ -3,26 +3,27 @@
     %title Virtual Assistant
   %body
 
-   
+
 
     - if current_user
-      %h3 Here are your tasks:
-      %ul
-        - @tasks.each do |tee|
-          %li
-            %p
-              Task:
-              = tee.task
-            %p
-              Deadline:
-              = tee.deadline.strftime("%d/%m/%Y")
-            %p
-              Location:
-              = tee.location
-            %p
-              Tags:
-              - tee.tags.map(&:tag_name).each do |x|
-                %a{:href => "/tags/#{x}"}= x
+      %section.task_holder
+        %h3 Here are your tasks:
+        %ul
+          - @tasks.all(order: [:deadline.asc]).each do |tee|
+            %li.task
+              %p
+                Task:
+                = tee.task
+              %p
+                Deadline:
+                = tee.deadline.strftime("%d/%m/%Y")
+              %p
+                Location:
+                = tee.location
+              %p
+                Tags:
+                - tee.tags.map(&:tag_name).each do |x|
+                  %a{:href => "/tags/#{x}"}= x
 
     -else
       %div#header
