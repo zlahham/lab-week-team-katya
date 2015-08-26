@@ -1,6 +1,11 @@
 %html
   %head
     %title Virtual Assistant
+
+    %link{:href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css", :rel => "stylesheet"}
+
+    %link{:href => "/css/style.css", :rel => "stylesheet", :type => "text/css"}
+
   %body
 
     - if current_user
@@ -10,6 +15,13 @@
         %input.button{:type => "submit", :value => "Sign out"}
       %form{:action => "/tasks/new"}
         %input.button{:type => "submit", :value => "New task"}
+    -else
+      %ul#menu
+        %li
+          %a{:href => "/users/new"} Sign up
+        %li
+          %a{:href => "/sessions/new"} Sign in
+
 
     - if flash[:errors] && !flash[:errors].empty?
       Please refer to the errors below

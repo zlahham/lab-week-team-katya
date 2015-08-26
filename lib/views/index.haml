@@ -1,27 +1,26 @@
-Welcome to
+%html
+  %head
+    %title Virtual Assistant
+  %body
 
-- if current_user
-  %h3 Here are your tasks:
-  #peeps
-  %ul
-    - @tasks.each do |tee|
-      %li
-        %p
-          Task:
-          = tee.task
-        %p
-          Deadline:
-          = tee.deadline.strftime("%d/%m/%Y")
-        %p
-          Location:
-          = tee.location
-        %p
-          Tags:
-          - tee.tags.map(&:tag_name).each do |x|
-            %a{:href => "/tags/#{x}"}= x
-- else
-  %ul#menu
-  %li
-    %a{:href => "/users/new"} Sign up
-  %li
-    %a{:href => "/sessions/new"} Sign in
+    Welcome to Virtual Assistant
+
+    - if current_user
+      %h3 Here are your tasks:
+      #peeps
+      %ul
+        - @tasks.each do |tee|
+          %li
+            %p
+              Task:
+              = tee.task
+            %p
+              Deadline:
+              = tee.deadline.strftime("%d/%m/%Y")
+            %p
+              Location:
+              = tee.location
+            %p
+              Tags:
+              - tee.tags.map(&:tag_name).each do |x|
+                %a{:href => "/tags/#{x}"}= x
