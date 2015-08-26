@@ -1,9 +1,10 @@
-%h1 Please sign in
+%section.sign
+  %h1 Please sign in
 
-%form{:action => "/sessions", :method => "post"}
-  %p Email:
-  %input{:name => "email", :type => "text"}
-    %p Password:
-    %input{:name => "password", :type => "password"}
-      %br
-        %input{:type => "submit", :value => "Sign in"}
+  %form{:action => "/sessions", :method => "post"}
+    %p Email:
+    %input{:name => "email", :type => "text"}
+      %p Password:
+      %input{:name => "password", :type => "password"}
+        %br
+          %input{:type => "submit", :value => "Sign in"}

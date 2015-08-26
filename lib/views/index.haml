@@ -3,11 +3,10 @@
     %title Virtual Assistant
   %body
 
-    Welcome to Virtual Assistant
+   
 
     - if current_user
       %h3 Here are your tasks:
-      #peeps
       %ul
         - @tasks.each do |tee|
           %li
@@ -24,3 +23,14 @@
               Tags:
               - tee.tags.map(&:tag_name).each do |x|
                 %a{:href => "/tags/#{x}"}= x
+
+    -else
+      %div#header
+        Welcome to Virtual Assistant
+        %div#banner
+          %ul.menu
+            %li
+              %a{:href => "/users/new"} Sign up
+          %ul.menu
+            %li
+              %a{:href => "/sessions/new"} Sign in
