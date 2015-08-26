@@ -6,21 +6,22 @@
 
 
     - if current_user
-      %section.task_holder
+      %section.task_holder.col-md-6
         %h3 Here are your tasks:
         %ul
           - @tasks.all(order: [:deadline.asc]).each do |tee|
             %li.task
-              %p
+              %p.item
                 Task:
                 = tee.task
-              %p
+              %p.deadline
                 Deadline:
                 = tee.deadline.strftime("%d/%m/%Y")
-              %p
+
+              %p.location
                 Location:
                 = tee.location
-              %p
+              %p.tag
                 Tags:
                 - tee.tags.map(&:tag_name).each do |x|
                   %a{:href => "/tags/#{x}"}= x

@@ -107,10 +107,45 @@ border: none;
 /*********************************************************************************/
 .task_holder{
   float: left;
-  margin-left: 10%;
+  margin-left: 4%;
   color: #fff;
+}
+
+.task_holder h3 {
+  text-align: left;
+  padding-left: 10px;
+}
+
+.task_holder ul{
+  list-style-type: none;
+  padding: 0;
+  font-size: 16px;
 }
 .task{
   color: #000;
   background-color:rgba(255, 255, 255, 0.8);
 }
+
+.task .item{
+  float: left;
+}
+
+/*.task .location{
+  float: left;
+}*/
+
+.task .deadline{
+  float: right;
+}
+
+.task .tag{
+  text-align: left;
+}
+/*
+.location{
+  float: left;
+}
+
+.tag{
+  float: left;
+}*/
