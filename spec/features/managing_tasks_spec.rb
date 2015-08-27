@@ -26,10 +26,4 @@ feature 'I can manage my tasks' do
     expect(page).not_to have_content('26/08/2015')
     expect(page).not_to have_content('Personal')
   end
-
-  xscenario 'I can edit my tasks' do
-
-  end
-
-
 end
