@@ -141,6 +141,7 @@ DEPENDENCIES
   dm-validations
   factory_girl
   haml
+  json
   rack
   rspec
   rspec-sinatra
