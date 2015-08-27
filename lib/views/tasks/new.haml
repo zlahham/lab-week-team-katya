@@ -1,14 +1,20 @@
-%h1 Create your task
-
-%form{:action => "/", :method => "post"}
-  %p
-  %input{:name => "task", :type => "text", :placeholder => "Task"}
-    %p
-    %input{:name => "location", :type => "text", :placeholder => "Location"}
-      %p
-      %input{:name => "deadline", :type => "date",:placeholder => "Deadline"}
-        %p
-        %input{:name => "tags", :type => "text", :placeholder => "#Tags"}
-          %br
-          %br
-            %input{:type => "submit", :value => "Create Task"}
+.container
+  %center
+    %h3 Create your task
+    %br
+    .row
+      .col-md-4.col-md-offset-4.col-xs-12
+        %form{:action => "/", :method => "post"}
+          .form-group{:width => "80%"}
+            %label{:for => "exampleInputTask"}
+            %input#exampleInputTask.form-control{:name => "task", :placeholder => "Task", :type => "text"}
+          .form-group
+            %label{:for => "exampleInputLocation"}
+            %input#exampleInputLocation.form-control{:name => "location", :placeholder => "Location", :type => "text"}
+          .form-group
+            %label{:for => "exampleInputDeadline"}
+            %input#exampleInputDeadline.form-control{:name => "deadline", :placeholder => "Deadline", :type => "date"}
+          .form-group
+            %label{:for => "tags"}
+            %input#Tags.form-control{:name => "tags", :placeholder => "Tags", :type => "text"}
+          %button.btn.btn-default{:type => "submit"} Create Task

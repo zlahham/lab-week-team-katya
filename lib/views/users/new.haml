@@ -1,16 +1,41 @@
-%section.sign
-  %h1 Please sign up
+.container
+  %center
+    %h3 Please sign up
+    %br
+    .row
+      .col-md-4.col-md-offset-4
+        %form{:action => "/users", :method => "post"}
+          .form-group
+            %label{:for => "exampleInputEmail1"}
+            %input#exampleInputEmail1.form-control{:name => "email", :placeholder => "Email", :type => "email"}
+          .form-group
+            %label{:for => "exampleInputPassword1"}
+            %input#exampleInputPassword1.form-control{:name => "password", :placeholder => "Password", :type => "password"}
+          .form-group
+            %label{:for => "exampleInputPassword1"}
+            %input#exampleInputPassword_confirmation.form-control{:name => "password_confirmation", :placeholder => "Password Confirmation", :type => "password"}
+          .form-group
+            %label{:for => "exampleInputName"}
+            %input#exampleInputEmail1.form-control{:name => "name", :placeholder => "Name", :type => "text"}
+          %button.btn.btn-default{:type => "submit"} Sign up
 
-  %form{:action => "/users", :method => "post" }
-    %p
-    %input{:name => "email", :type => "text", :placeholder => "Email"}
-      %p
-      %input{:name => "password", :type => "password", :placeholder => "Password"}
-        %p
-        %input{:name => "password_confirmation", :type => "password",
-         :placeholder => "Confirmation"}
-          %p
-          %input{:name => "name", :type => "text", :placeholder => "Name"}
-            %p
-              %p
-              %input{:type => "submit", :value => "Sign up"}
+
+
+
+
+-# %section.sign
+-#   %h1 Please sign up
+-#
+-#   %form{:action => "/users", :method => "post" }
+-#     %p
+-#     %input{:name => "email", :type => "text", :placeholder => "Email"}
+-#       %p
+-#       %input{:name => "password", :type => "password", :placeholder => "Password"}
+-#         %p
+-#         %input{:name => "password_confirmation", :type => "password",
+-#          :placeholder => "Confirmation"}
+-#           %p
+-#           %input{:name => "name", :type => "text", :placeholder => "Name"}
+-#             %p
+-#               %p
+-#               %input{:type => "submit", :value => "Sign up"}

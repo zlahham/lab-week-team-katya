@@ -6,25 +6,25 @@
 
 
     - if current_user
-      %section.task_holder.col-md-6
-        %h3 Here are your tasks:
-        %ul
-          - @tasks.all(order: [:deadline.asc]).each do |tee|
-            %li.task
-              %p.item
-               
-                = tee.task
-              %p.deadline
-                Deadline:
-                = tee.deadline.strftime("%d/%m/%Y")
+      - @tasks.all(order: [:deadline.asc]).each do |tee|
+        %center
+          .row
+            .col-md-4.col-md-offset-1
+              .panel.panel-info
+                .panel-heading
+                  #{tee.task}
+                .panel-body
+                  %p
+                    Deadline:
+                    = tee.deadline.strftime("%d/%m/%Y")
+                  %p
+                    Location:
+                    = tee.location
+                  %p
+                    Tags:
+                    - tee.tags.map(&:tag_name).each do |x|
+                      %a{:href => "/tags/#{x}"}= x
 
-              %p.location
-                Location:
-                = tee.location
-              %p.tag
-                Tags:
-                - tee.tags.map(&:tag_name).each do |x|
-                  %a{:href => "/tags/#{x}"}= x
 
     -else
       %div#header

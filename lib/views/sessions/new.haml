@@ -1,11 +1,25 @@
-%section.sign
-  %h1 Please sign in
+.container
+  %h3 Please sign in
+  %br
+  .row
+    .col-xs-4.col-xs-offset-4
+      %form{:action => "/sessions", :method => "post"}
+        .form-group
+          %label{:for => "exampleInputEmail"}
+          %input#exampleInputEmail.form-control{:name => "email", :placeholder => "Email", :type => "email"}
+        .form-group
+          %label{:for => "exampleInputPassword"}
+          %input#exampleInputPassword.form-control{:name => "password", :placeholder => "Password", :type => "password"}
+        %button.btn.btn-default{:type => "submit"} Sign in
 
-  %form{:action => "/sessions", :method => "post"}
-    %p
-    %input{:name => "email", :type => "text", :placeholder => "Email"}
-      %p
-      %input{:name => "password", :type => "password", :placeholder => "Password"}
-        %p
-          %p
-          %input{:type => "submit", :value => "Sign in"}
+-# %section.sign
+-#   %h1 Please sign in
+
+  -# %form{:action => "/sessions", :method => "post"}
+  -#   %p
+  -#   %input{:name => "email", :type => "text", :placeholder => "Email"}
+  -#     %p
+  -#     %input{:name => "password", :type => "password", :placeholder => "Password"}
+  -#       %p
+  -#         %p
+  -#         %input{:type => "submit", :value => "Sign in"}

@@ -17,10 +17,10 @@
             %div#sign_out_button
               %form{:method => "post", :action => "/sessions"}
                 %input{:type => "hidden", :name => "_method", :value => "delete"}
-                %input.button{:type => "submit", :value => "Sign out"}
+                %input.btn.btn-default.btn-lg{:type => "submit", :value => "Sign out"}
             %div#new_task_button
               %form{:action => "/tasks/new"}
-                %input.button{:type => "submit", :value => "New task"}
+                %input.btn.btn-default.btn-lg{:type => "submit", :value => "New task"}
 
     - if flash[:errors] && !flash[:errors].empty?
       Please refer to the errors below
