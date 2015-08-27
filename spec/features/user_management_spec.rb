@@ -35,7 +35,11 @@ feature 'Signing up' do
     expect(page).to have_content('Email is already taken')
   end
 
-  xscenario 'I cannot sign up if someone I am already signed in' do
+  scenario 'I cannot sign up if someone I am already signed in' do
+    user = create(:user)
+    sign_in(user)
+    visit('/users/new')
+    expect(current_path).to eq('/')
   end
 
 end
