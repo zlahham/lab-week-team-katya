@@ -7,6 +7,7 @@ group :test do
   gem 'database_cleaner'
   gem 'factory_girl'
   gem 'byebug'
+  gem 'json'
   # gem 'timecop'
 end
 

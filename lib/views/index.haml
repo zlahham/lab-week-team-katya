@@ -2,9 +2,6 @@
   %head
     %title Virtual Assistant
   %body
-
-
-
     - if current_user
       - @tasks.all(order: [:deadline.asc]).each do |tee|
         %center
