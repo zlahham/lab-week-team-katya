@@ -19,12 +19,12 @@ module VirtualAssistant
               location: params[:location],
               deadline: params[:deadline],
               user_id: user_id)
+
           params[:tags].split(' ').each do |t|
             tag = Tag.create(tag_name: t)
             @task.tags << tag
           end
          @task.save
-
          redirect to('/')
         end
       end

@@ -1,5 +1,7 @@
 class Task
 
+  attr_reader :id
+
   include DataMapper::Resource
 
   property :id, Serial

@@ -24,6 +24,10 @@
                     Tags:
                     - tee.tags.map(&:tag_name).each do |x|
                       %a{:href => "/tags/#{x}"}= x
+                  %p
+                    %form{:method => "post", :action => "/tasks"}
+                      %input{:type => "hidden", :name => "_method", :value => "delete"}
+                      %input.btn.btn-danger{:type => "submit", :value => "Delete"}
 
 
     -else
