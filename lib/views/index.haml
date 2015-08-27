@@ -1,6 +1,9 @@
 %html
   %head
     %title Virtual Assistant
+
+
+
   %body
     - if current_user
       - @tasks.all(order: [:deadline.asc]).each do |tee|
@@ -25,7 +28,11 @@
                     %form{:method => "post", :action => "/tasks/#{tee.id}" }
                       %input{:type => "hidden", :name => "_method", :value => "delete"}
                       %input.btn.btn-danger{:type => "submit", :value => "Delete"}
-
+            .col-md-3.col-md-offset-3
+              %div#displayWeather
+                %article.city
+                %h1#cityTemp
+                %article.weather
 
     -else
       %div#header

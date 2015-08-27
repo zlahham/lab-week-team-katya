@@ -22,10 +22,7 @@
           %div#weather
             %input#city{:placeholder => "Enter a City", :type => "text"}
             %input.getWeather{:type => "submit", :value => "Get Weather"}
-          %div#displayWeather
-            %article.city
-            %h1#cityTemp
-            %article.weather
+      
 
     - if flash[:errors] && !flash[:errors].empty?
       Please refer to the errors below
