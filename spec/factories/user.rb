@@ -8,4 +8,12 @@ FactoryGirl.define do
     password_confirmation '12345'
     name 'Raph'
   end
+
+  factory :user_2, parent: :user do
+    email 'owen@test.com'
+    password '7890'
+    password_confirmation '12345'
+    name 'Owen'
+  end
+  
 end
