@@ -5,7 +5,7 @@
     %link{:href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css", :rel => "stylesheet"}
     %link{:href => "/css/style.css", :rel => "stylesheet", :type => "text/css"}
     %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js", :type => "text/javascript"}
-    
+    %script{:async => "", :defer => "defer", :src => "https://maps.googleapis.com/maps/api/js?callback=initMap"}
   %body
 
     - if current_user
@@ -24,12 +24,12 @@
           %div#weather
             %input#city{:placeholder => "Enter a City", :type => "text"}
             %input.getWeather{:type => "submit", :value => "Get Weather"}
-          
+
           %ul.list-inline#displayWeather
             %li.city
             %li#cityTemp
             %li.weather
-      
+
 
     - if flash[:errors] && !flash[:errors].empty?
       Please refer to the errors below
@@ -41,3 +41,4 @@
         %p #{flash[:notice]}
     =yield
   %script{:src => "/src/weather.js"}
+  %script{:src => "/src/map.js"}

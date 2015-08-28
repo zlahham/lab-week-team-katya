@@ -4,29 +4,36 @@
 
   %body
     - if current_user
-      .row
-        - @tasks.all(order: [:deadline.asc]).each do |tee|
-          %center
-          .container
-            .col-sm-4.col-sm-offset-1.col-xs-6.col-xs-offset-3
-              .panel.panel-info
-                .panel-heading
-                  #{tee.task}
-                .panel-body
-                  %p
-                    Deadline:
-                    = tee.deadline.strftime("%d/%m/%Y")
-                  %p
-                    Location:
-                    = tee.location
-                  %p
-                    Tags:
-                    - tee.tags.map(&:tag_name).each do |x|
-                      %a{:href => "/tags/#{x}"}= x
-                  %p
-                    %form{:method => "post", :action => "/tasks/#{tee.id}" }
-                      %input{:type => "hidden", :name => "_method", :value => "delete"}
-                      %input.btn.btn-danger{:type => "submit", :value => "Delete"}
+
+
+      .col-sm-4.col-sm-offset-1
+        %div#mapContainer
+        %br
+
+
+      - @tasks.all(order: [:deadline.asc]).each do |tee|
+        %center
+
+          .col-sm-4.col-sm-offset-2.col-xs-6.col-xs-offset-4
+            .panel.panel-info
+              .panel-heading
+                #{tee.task}
+              .panel-body
+                %p
+                  Deadline:
+                  = tee.deadline.strftime("%d/%m/%Y")
+                %p
+                  Location:
+                  = tee.location
+                %p
+                  Tags:
+                  - tee.tags.map(&:tag_name).each do |x|
+                    %a{:href => "/tags/#{x}"}= x
+                %p
+                  %form{:method => "post", :action => "/tasks/#{tee.id}" }
+                    %input{:type => "hidden", :name => "_method", :value => "delete"}
+                    %input.btn.btn-danger{:type => "submit", :value => "Delete"}
+
 
 
 
