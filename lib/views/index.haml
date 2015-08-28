@@ -7,9 +7,9 @@
 
 
       .col-sm-4.col-sm-offset-1
-        %div#mapContainer
+        %input#pac-input.controls{:placeholder => "Search Box", :type => "text"}/
+        #map
         %br
-
 
       - @tasks.all(order: [:deadline.asc]).each do |tee|
         %center
