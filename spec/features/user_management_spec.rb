@@ -64,6 +64,6 @@ feature 'Sign out' do
     user = create :user
     sign_in(user)
     click_button 'Sign out'
-    expect(page).to have_content('You are now logged out')
+    expect(current_path).to eq "/"
   end
 end

@@ -13,6 +13,7 @@ class User
   validates_uniqueness_of :email
 
   has n, :tasks
+  has n, :tags
 
   property :id, Serial
   property :email, String, required: true
