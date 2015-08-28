@@ -1,13 +1,15 @@
 %html
   %head
+    %meta{:charset => "utf-8"}/
     %title Virtual Assistant
     %link{:href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css", :rel => "stylesheet"}
     %link{:href => "/css/style.css", :rel => "stylesheet", :type => "text/css"}
     %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js", :type => "text/javascript"}
+    
   %body
 
     - if current_user
-      %section#header_menu.navbar-fixed-top
+      %section#header_menu
         %div.col-md-12
           %div#welcome
             %a{:href => "/"} Welcome, #{current_user.name}
@@ -22,6 +24,11 @@
           %div#weather
             %input#city{:placeholder => "Enter a City", :type => "text"}
             %input.getWeather{:type => "submit", :value => "Get Weather"}
+          
+          %ul.list-inline#displayWeather
+            %li.city
+            %li#cityTemp
+            %li.weather
       
 
     - if flash[:errors] && !flash[:errors].empty?

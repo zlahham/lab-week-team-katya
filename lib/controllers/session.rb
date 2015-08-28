@@ -21,7 +21,8 @@ module VirtualAssistant
 
       delete '/sessions' do
         session.clear
-        flash[:notice] = 'You are now logged out'
+        redirect '/'
+        # flash[:notice] = 'You are now logged out'
       end
 
     end

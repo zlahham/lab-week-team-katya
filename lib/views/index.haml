@@ -2,14 +2,13 @@
   %head
     %title Virtual Assistant
 
-
-
   %body
     - if current_user
-      - @tasks.all(order: [:deadline.asc]).each do |tee|
-        %center
-          .row
-            .col-md-4.col-md-offset-1
+      .row
+        - @tasks.all(order: [:deadline.asc]).each do |tee|
+          %center
+          .container
+            .col-sm-4.col-sm-offset-1.col-xs-6.col-xs-offset-3
               .panel.panel-info
                 .panel-heading
                   #{tee.task}
@@ -28,11 +27,8 @@
                     %form{:method => "post", :action => "/tasks/#{tee.id}" }
                       %input{:type => "hidden", :name => "_method", :value => "delete"}
                       %input.btn.btn-danger{:type => "submit", :value => "Delete"}
-            .col-md-3.col-md-offset-3
-              %div#displayWeather
-                %article.city
-                %h1#cityTemp
-                %article.weather
+
+
 
     -else
       %div#header

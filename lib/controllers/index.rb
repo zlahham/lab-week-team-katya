@@ -27,6 +27,7 @@ module VirtualAssistant
          @task.save
          redirect to('/')
         end
+        # Make weather persist
       end
 
       get '/tags/:tag_name' do
