@@ -2,6 +2,9 @@
 
 ###Lab Week.
 
+View a live version of our app here:
+https://makersacademy-labweek.herokuapp.com/
+
 We decided to go on with building a virtual assistant application that can record your tasks for you.
 The brainstorming session we had led us to think about more ideas. We realised quite early that we should try to  incorporate many of the skills that we picked up since the first week.
 
