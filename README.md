@@ -52,6 +52,7 @@ See the screenshots below of how our application looked by the end of the week:
 
 
 *Home page/landing page*
+![landing](https://octodex.github.com/images/yaktocat.png)
 ![](Screen Shot 2015-09-08 at 18.21.03.png)
 *Sign up page*
 ![](Screen Shot 2015-09-08 at 18.21.30.png)
