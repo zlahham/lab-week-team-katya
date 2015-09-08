@@ -53,17 +53,16 @@ See the screenshots below of how our application looked by the end of the week:
 
 *Home page/landing page*
 ![landing](https://github.com/Kyvyas/lab-week-team-katya/blob/master/images/landing.png)
-![](Screen Shot 2015-09-08 at 18.21.03.png)
 *Sign up page*
-![](Screen Shot 2015-09-08 at 18.21.30.png)
+![signup](https://github.com/Kyvyas/lab-week-team-katya/blob/master/images/signup.png)
 *Sign in page*
-![](Screen Shot 2015-09-08 at 18.21.55.png)
+![signin](https://github.com/Kyvyas/lab-week-team-katya/blob/master/images/signin.png)
 *User logged in, showing weather search functionality*
-![](Screen Shot 2015-09-08 at 18.22.59.png)
+![weather](https://github.com/Kyvyas/lab-week-team-katya/blob/master/images/weather.png)
 *User logged in, showing map search functionality*
-![](Screen Shot 2015-09-08 at 18.23.20.png)
+![map](https://github.com/Kyvyas/lab-week-team-katya/blob/master/images/map.png)
 *User logged in, showing tasks added*
-![](Screen Shot 2015-09-08 at 18.25.51.png)
+![tasks](https://github.com/Kyvyas/lab-week-team-katya/blob/master/images/tasks.png)
 
 
 ---
