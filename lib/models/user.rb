@@ -1,5 +1,4 @@
 require 'bcrypt'
-require 'byebug'
 
 class User
 
@@ -13,13 +12,13 @@ class User
   validates_uniqueness_of :email
 
   has n, :tasks
+  has n, :tags
 
   property :id, Serial
   property :email, String, required: true
   property :password_digest, Text
   property :password_token, Text
   property :name, Text
-
 
   def password=(password)
     @password = password
@@ -30,5 +29,4 @@ class User
     user = first(email: email)
     user && BCrypt::Password.new(user.password_digest) == password ? user : nil
   end
-
 end

@@ -6,8 +6,7 @@ group :test do
   gem 'rspec-sinatra'
   gem 'database_cleaner'
   gem 'factory_girl'
-  gem 'byebug'
-  # gem 'timecop'
+  gem 'json'
 end
 
 gem 'sinatra'
@@ -19,3 +18,4 @@ gem 'dm-validations'
 gem 'sinatra-flash'
 gem 'sinatra-partial'
 gem 'haml'
+gem 'dm-migrations'

@@ -19,18 +19,20 @@ module VirtualAssistant
               location: params[:location],
               deadline: params[:deadline],
               user_id: user_id)
+
           params[:tags].split(' ').each do |t|
-            tag = Tag.create(tag_name: t)
+            tag = Tag.create(tag_name: t, user_id: user_id)
             @task.tags << tag
           end
          @task.save
-
          redirect to('/')
         end
+        # Make weather persist
       end
 
       get '/tags/:tag_name' do
-        tag = Tag.all(tag_name: params[:tag_name])
+        tag = Tag.all(tag_name: params[:tag_name],:user_id => session[:user_id])
+        p tag
         @tasks = tag ? tag.tasks : []
         haml :index
       end

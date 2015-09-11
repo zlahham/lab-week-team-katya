@@ -1,14 +1,24 @@
 .container
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4d0b44cc7bee4ca7377c3575689fb8ebe226df86
   %h3 Please sign in
   %br
   .row
     .col-xs-4.col-xs-offset-4
       %form{:action => "/sessions", :method => "post"}
         .form-group
+<<<<<<< HEAD
           %label{:for => "exampleInputEmail"} Email:
           %input#exampleInputEmail.form-control{:name => "email", :placeholder => "Email", :type => "email"}
         .form-group
           %label{:for => "exampleInputPassword"} Password
+=======
+          %label{:for => "exampleInputEmail"}
+          %input#exampleInputEmail.form-control{:name => "email", :placeholder => "Email", :type => "email"}
+        .form-group
+          %label{:for => "exampleInputPassword"}
+>>>>>>> 4d0b44cc7bee4ca7377c3575689fb8ebe226df86
           %input#exampleInputPassword.form-control{:name => "password", :placeholder => "Password", :type => "password"}
         %button.btn.btn-default{:type => "submit"} Sign in

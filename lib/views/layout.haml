@@ -1,6 +1,9 @@
 %html
   %head
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "initial-scale=1.0, user-scalable=no", :name => "viewport"}/
     %title Virtual Assistant
+<<<<<<< HEAD
     %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
     %link{:href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css", :rel => "stylesheet"}
     %link{:href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css", :rel => "stylesheet"}
@@ -37,3 +40,45 @@
             %p #{flash[:notice]}
 
         =yield
+=======
+    %link{:href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css", :rel => "stylesheet"}
+    %link{:href => "/css/style.css", :rel => "stylesheet", :type => "text/css"}
+    %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js", :type => "text/javascript"}
+  %body
+
+    - if current_user
+      %section#header_menu
+        %div.col-md-12
+          %div#welcome
+            %a{:href => "/"} Welcome, #{current_user.name}
+          %div#nav_buttons
+            %div#sign_out_button
+              %form{:method => "post", :action => "/sessions"}
+                %input{:type => "hidden", :name => "_method", :value => "delete"}
+                %input.btn.btn-default.btn-lg{:type => "submit", :value => "Sign out"}
+            %div#new_task_button
+              %form{:action => "/tasks/new"}
+                %input.btn.btn-default.btn-lg{:type => "submit", :value => "New task"}
+          %div#weather
+            %input#city{:placeholder => "Enter a City", :type => "text"}
+            %input.getWeather{:type => "submit", :value => "Get Weather"}
+
+          %ul.list-inline#displayWeather
+            %li.city
+            %li#cityTemp
+            %li.weather
+
+
+    - if flash[:errors] && !flash[:errors].empty?
+      Please refer to the errors below
+      %ul
+        - flash[:errors].each do |error|
+          %li #{error}
+
+      - if flash[:notice]
+        %p #{flash[:notice]}
+    =yield
+  %script{:src => "/src/weather.js"}
+  %script{:async => "", :defer => "defer", :src => "https://maps.googleapis.com/maps/api/js?libraries=places&callback=initAutocomplete"}
+  %script{:src => "/src/map.js"}
+>>>>>>> 4d0b44cc7bee4ca7377c3575689fb8ebe226df86

@@ -3,6 +3,7 @@
     %h3 Create your task
     %br
     .row
+<<<<<<< HEAD
       .col-md-4.col-md-offset-4
         %form{:action => "/", :method => "post"}
           .form-group{:width => "80%"}
@@ -16,5 +17,20 @@
             %input#exampleInputDeadline.form-control{:name => "deadline", :placeholder => "Deadline", :type => "date"}
           .form-group
             %label{:for => "tags"} Tags
+=======
+      .col-md-4.col-md-offset-4.col-xs-12
+        %form{:action => "/", :method => "post"}
+          .form-group{:width => "80%"}
+            %label{:for => "exampleInputTask"}
+            %input#exampleInputTask.form-control{:name => "task", :placeholder => "Task", :type => "text"}
+          .form-group
+            %label{:for => "exampleInputLocation"}
+            %input#exampleInputLocation.form-control{:name => "location", :placeholder => "Location", :type => "text"}
+          .form-group
+            %label{:for => "exampleInputDeadline"}
+            %input#exampleInputDeadline.form-control{:name => "deadline", :placeholder => "Deadline", :type => "date"}
+          .form-group
+            %label{:for => "tags"}
+>>>>>>> 4d0b44cc7bee4ca7377c3575689fb8ebe226df86
             %input#Tags.form-control{:name => "tags", :placeholder => "Tags", :type => "text"}
           %button.btn.btn-default{:type => "submit"} Create Task

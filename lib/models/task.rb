@@ -1,4 +1,5 @@
 class Task
+  attr_reader :id
 
   include DataMapper::Resource
 
@@ -8,5 +9,4 @@ class Task
   property :deadline, Date
   belongs_to :user
   has n, :tags, through: Resource
-
 end

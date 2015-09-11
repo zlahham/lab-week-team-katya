@@ -5,8 +5,12 @@ module VirtualAssistant
     class UserController < Base
 
       get '/users/new' do
-        @user = User.new
-        haml :'users/new'
+        if current_user
+          redirect '/'
+        else
+          @user = User.new
+          haml :'users/new'
+        end
       end
 
       post '/users' do

@@ -1,8 +1,15 @@
 %html
   %head
     %title Virtual Assistant
-  %body
 
+  %body
+    - if current_user
+      .col-sm-4.col-sm-offset-1
+        %input#pac-input.controls{:placeholder => "Search Box", :type => "text"}/
+        #map
+        %br
+
+<<<<<<< HEAD
     - if current_user
       %h4 Here are your tasks:
 
@@ -26,3 +33,37 @@
                       Tags:
                       - tee.tags.map(&:tag_name).each do |x|
                         %a{:href => "/tags/#{x}"}= x
+=======
+      - @tasks.all(order: [:deadline.asc]).each do |tee|
+        %center
+
+          .col-sm-4.col-sm-offset-2.col-xs-6.col-xs-offset-4
+            .panel.panel-info
+              .panel-heading
+                #{tee.task}
+              .panel-body
+                %p
+                  Deadline:
+                  = tee.deadline.strftime("%d/%m/%Y")
+                %p
+                  Location:
+                  = tee.location
+                %p
+                  Tags:
+                  - tee.tags.map(&:tag_name).each do |x|
+                    %a{:href => "/tags/#{x}"}= x
+                %p
+                  %form{:method => "post", :action => "/tasks/#{tee.id}" }
+                    %input{:type => "hidden", :name => "_method", :value => "delete"}
+                    %input.btn.btn-danger{:type => "submit", :value => "Delete"}
+    -else
+      %div#header
+        Welcome to Virtual Assistant
+        %div#banner
+          %ul.menu
+            %li
+              %a{:href => "/users/new"} Sign up
+          %ul.menu
+            %li
+              %a{:href => "/sessions/new"} Sign in
+>>>>>>> 4d0b44cc7bee4ca7377c3575689fb8ebe226df86
